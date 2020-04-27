@@ -1,0 +1,465 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: 'Roboto';
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.main-block {
+    display: flex;
+}
+.side {
+    background: #C4C4C4;
+    padding: 2px 2px;
+    width:75px;
+    text-align: center;
+}
+.side-left .single-appl {
+    padding: 5px;
+    background: #acf5af;
+    border: 1px solid #000;
+    margin-top: 2px;
+}
+.center-block{
+	flex-grow: 1;
+	margin: 0 75px;
+	border:1px solid #000;
+	padding:10px 0 10px;
+}
+.center-block-upper {
+    display: flex;
+}
+.center-block-upper > div{
+	flex-grow: 1;
+	border:2px solid #ddd;
+	padding:5px;
+	margin:10px;
+	width: 50%;
+}
+.info-block p{
+	font-size: 18px;
+	margin-left: 20px;
+}
+.info-block h5 span {
+	font-size: 16px;
+	color: #c4c4c4;
+	font-weight: normal;
+	margin-left: 10px;
+}
+.info-block h5{
+	font-size: 26px;
+	color: #000;
+	font-weight: bold;
+	margin:15px 0;
+	margin-left: 20px;
+}
+.info-block h6 {
+	font-size: 16px;
+	color: #c4c4c4;
+	font-weight: normal;
+	margin-left: 20px;
+}
+.info-block h6 span{
+	color: #44c08e;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.search-block {
+    background: #efefef;
+}
+.searchform {
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+}
+.search-block .searchform button{
+	border-radius:2px;
+	border:2px solid #000;
+	width: 50px;
+	height: 50px;
+	background: #8fb2bd;
+	margin-left: 10px;
+}
+.search-block .searchform form{
+	position: relative;
+	display: flex;
+}
+.search-block .searchform img{
+	position: absolute;
+	left:15px;
+	top: 12px;
+	width: 25px;
+}
+.search-block .searchform input{
+	height: 30px;
+	padding: 8px 8px 8px 50px;
+	width: 100%;
+	border:2px solid #0683f9;
+	border-radius: 10px;
+}
+
+
+/* The label container */
+.label-con {
+  display: flex;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height:25px;
+}
+
+/* Hide the browser's default radio button */
+.label-con input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.search-block form .label-con {
+    flex-grow: 1;
+    align-items: center;
+}
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #808080;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.label-con:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.radio-search {
+    background: #fff;
+    border: 1px solid #000;
+    display: flex;
+    align-content: center;
+    padding: 10px 15px;
+}
+
+/* When the radio button is checked, add a blue background */
+.label-con input:checked ~ .checkmark {
+  background-color: #fff;
+  border-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.label-con input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.label-con .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #2196F3;
+}
+
+.center-block-down {
+    display: flex;
+}
+.center-block-down > div {
+    width: 50%;
+    margin: 10px;
+    padding: 0px;
+    text-align: center;
+    height: 400px;
+    overflow-y: scroll;
+}
+.left-sm {
+    background: #EDEDED;
+}
+.single-left-sm {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 24%;
+    margin: 10px;
+    background: #f5acac;
+    font-weight: bold;
+    display: inline-block;
+}
+.single-left-sm h4{
+	font-size:26px;
+	margin:0 0 5px 0;
+}
+.single-left-sm h5{
+	font-size:20px;
+	letter-spacing: 1px;
+}
+.single-left-sm.active{
+	background:#acf5af;
+}
+.left-appl-list {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+    width: 100%;
+}
+.side-left {
+    display: flex;
+}
+
+.right-sm {
+    background: #C4C4C4;
+}
+.single-right-sm {
+    padding: 10px;
+    width: 41%;
+    margin: 10px;
+    background: #ededed;
+    position: relative;
+    font-weight: bold;
+    display: inline-block;
+    text-align: left;
+}
+.single-right-sm h4{
+	font-size:26px;
+	margin:0 0 16px 0;
+}
+.single-right-sm h5{
+	font-size:20px;
+	letter-spacing: 1px;
+}
+.blink-btn {
+    position: absolute;
+    width: 40px;
+    height: 25px;
+}
+.blink-btn.red-blink {
+    right: 10px;
+    top: 10px;
+    background: red;border: 1px solid red;
+}
+.blink-btn.green-blink {
+    right: 10px;
+    bottom: 10px;
+    background: #acf5af;
+    border: 1px solid #000;
+}
+
+@media (max-width: 1324px) {
+	.single-right-sm {
+	    width: 40%;
+	}
+}
+@media (max-width: 1302px) {
+	.single-left-sm {
+	    margin: 8px;
+	}
+}
+@media (max-width: 1220px) {
+	.single-left-sm {
+	    width: 23%;
+	}
+	.single-right-sm {
+    	width: 39%;
+	}
+}
+@media (max-width: 1199px){
+	.single-left-sm {
+    	width: 37%;
+	}
+	.center-block {
+    	margin: 0 30px;
+	}
+	.single-right-sm {
+	    width: 88%;
+	}
+}
+@media (max-width: 991px){
+	.info-block p, .info-block h5, .info-block h6{
+		margin-left: 0px;
+	}
+	.center-block-upper {
+    	display: block;
+	}
+	.center-block-upper > div{
+		width: initial;
+	}
+	.center-block-down {
+	    display: block;
+	}
+	.center-block-down > div {
+    	width: inherit;
+    	display: block;
+    	margin: 0 10px 10px;
+	}
+	.single-left-sm {
+   		width: 44%;
+    	display: inline-block;
+    	margin: 0 5px 10px 0;
+	}		
+	.center-block-down .left-sm{
+		padding: 10px;
+		text-align: left;
+	}
+	.single-right-sm {
+		width: 41%;
+	}
+}
+@media (max-width: 767px){
+	.center-block {
+	    margin: 0 10px;
+	}
+	.radio-search {
+    	display: block;
+	}
+	.label-con {
+		margin-bottom: 10px;
+	}
+	.single-left-sm {
+		width: inherit;
+    	display: block;
+	}
+	.single-right-sm {
+		width: inherit;
+    	display: block;
+	}
+	.center-block-down .right-sm {
+	    padding: 10px 0px;
+	}
+}
+
+@media (max-width: 480px){
+	.center-block {
+    	padding: 0;
+	}
+	.info-block h5 {
+    	margin: 10px 0;
+	}
+	.info-block h6 span{
+		display: block;
+	}
+	.info-block h6 {
+		margin-left: 0;
+	}
+	.single-left-sm {
+	    padding: 5px;
+	    border-radius: 10px;
+	}
+	.single-left-sm h4 {
+	    font-size: 20px;
+	}
+	.single-left-sm h5 {
+	    font-size: 16px;
+	}
+	.label-con {
+	    font-size: 18px;
+	}
+	.checkmark {
+	    height: 15px;
+	    width: 15px;
+	}
+	.label-con .checkmark::after {
+	    top: 4px;
+	    left: 4px;
+	    width: 8px;
+	    height: 8px;
+	}
+	.label-con{
+		height: 16px;
+	}
+	.single-right-sm h4 {
+	    font-size: 20px;
+	    margin: 0 0 16px 0;
+	}
+	.single-right-sm h5 {
+	    font-size: 16px;
+	}
+	.blink-btn {
+	    width: 28px;
+	    height: 18px;
+	}
+	.side-left .single-appl {
+
+    padding: 3px;
+    font-size: 12px;
+
+}
+.left-appl-list{
+
+    display: block;
+}
+.side{
+	width:55px;
+}
+.search-block .searchform input {
+    width: inherit;
+    }
+    .searchform{
+    	display: block;
+    }
+    .search-block .searchform button {
+	    border-radius: 0 12px 12px 0;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	}
+    .search-block .searchform img {
+	    position: absolute;
+	    left: inherit;
+	    width: 25px;
+	    right: 12px;
+	    z-index: 2;
+	    pointer-events: none;
+	}
+}
