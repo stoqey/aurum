@@ -8,14 +8,6 @@ if (!process.env.SENTRY_DSN) { // Only if envs empty
     require('dotenv').config();
 }
 
-if (!process.env.SENTRY_DSN) { // Only if envs empty
-    console.log('error env', process.env);
-    process.exit(1);
-}
-
-// Use the SentryWebpack plugin to upload the source maps during build step
-
-
 const { SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, NODE_ENV } = process.env;
 
 const publicEnvs = {

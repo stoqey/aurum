@@ -12,10 +12,10 @@ export const HOSTNAME = os.hostname();
 export const finnHubKey = env.FINNHUB_KEY || '';
 
 /***
- * Notebook server env
+ * Aurum server env
  */
-export const PORT = env.PORT || 3007;
-export const appName = env.APP_NAME || 'ALGO:SERVER';
+export const PORT = env.PORT || 3008;
+export const appName = env.APP_NAME || 'AURUM:SERVER';
 
 /**
  * External algo server env

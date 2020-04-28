@@ -6,9 +6,8 @@ import { SubscriptionServer } from 'subscriptions-transport-ws';
 
 import { GraphQLPath } from '../shared/config';
 import typeDefs from '../shared/graphql/typedef'
-import { PORT } from './config';
+import { PORT, appName } from './config';
 import { QueryResolver, SubscriptionResolver } from './resolvers';
-import { resolverEvents } from './resolvers/resolver.events';
 
 
 /**
@@ -24,24 +23,22 @@ export const apolloServerSetUp = (server: express.Application, handle: any) => {
     }
   };
 
-  // Resolvers definition
+  const gqlPath = GraphQLPath;
+
+  // 0. Resolvers definition
   const resolvers = {
     Query: QueryResolver,
     Subscription: SubscriptionResolver(pubsub),
   };
 
-  // Schema definition
+  // 1. Schema definition
   const schema = makeExecutableSchema({
     typeDefs,
     resolvers,
   });
 
-  // 1. Resolver events
-  resolverEvents(pubsub);
-
   // 2. Add Apollo server
   const apolloServer = new ApolloServer({ schema, context });
-  const gqlPath = GraphQLPath;
   apolloServer.applyMiddleware({ app: server, path: gqlPath });
 
   // 3. NextJS handle
@@ -54,7 +51,7 @@ export const apolloServerSetUp = (server: express.Application, handle: any) => {
   // Wrap the Express server
   const ws = createServer(server);
   ws.listen(PORT, () => {
-    console.log(`Apollo Server is now running on http://localhost:${PORT}`);
+    console.log(`${appName} is now running on http://localhost:${PORT}`);
     // Set up the WebSocket for handling GraphQL subscriptions
     new SubscriptionServer({
       execute,
