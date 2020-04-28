@@ -990,18 +990,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@dalisoft/args@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@dalisoft/args/-/args-0.1.1.tgz#54a8e8e932de3ac0ef7ab39e83c58f1464d7d306"
-  integrity sha512-PwmLEhnTyK6+AUwD0oqS57nLs1vpB17vEDlMc1i27zH8mrtFJmBmYfQv4FszoUHDHv3PtFk8M0X9yWxry2TSwA==
-
-"@dalisoft/events@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@dalisoft/events/-/events-0.2.0.tgz#30ea60c77a8479afd272a19b401e562dcad04dc8"
-  integrity sha512-2NS/0vS9eL8ZxhgCVZQgPS4uoqbcSk9FN3G8Eqakcej7wOpH72z1kmDEDGI5T+MOp9IueKT2qI0XUdXhKeK9GA==
-  dependencies:
-    "@dalisoft/args" "^0.1.1"
-
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -6380,15 +6368,6 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.1.tgz#d7be34dfa3105b91494c3147089315eff8874b01"
   integrity sha512-isWHgVjnFjh2x2yuJ/tj3JbwoHu3UC2dX5G/88Cm24yB6YopVgxvBObDY7n5xW6ExmFhJpSEQqFPvq9zaXc8Jw==
 
-nanoexpress@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/nanoexpress/-/nanoexpress-2.0.2.tgz#ae86d9556edbe4952876ac9e76596e8bf8376c1b"
-  integrity sha512-NGQMU77PFpex3blTvUUAobgpr4sqf1J3dAsC5cqxIJ8AUCWIZieiAX1/NatItfEazKd+ke2g/0gVlLRk8tWvrw==
-  dependencies:
-    "@dalisoft/events" "^0.2.0"
-    debug "^4.1.1"
-    uWebSockets.js "github:uNetworking/uWebSockets.js#binaries"
-
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -9029,10 +9008,6 @@ typescript@^3.5.2:
   version "3.8.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
   integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
-
-"uWebSockets.js@github:uNetworking/uWebSockets.js#binaries":
-  version "17.4.0"
-  resolved "https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/871c22c171b5277266670e60ffdb07bdd6728b54"
 
 ua-parser-js@^0.7.18:
   version "0.7.21"
