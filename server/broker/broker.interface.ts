@@ -12,7 +12,7 @@ export interface BrokerEvents {
     onTrade: (trade: any) => Promise<any>
 
     // symbols
-    onMarketData: () => Promise<any>;
+    onMarketData: (data: any) => Promise<any>;
 }
 
 export interface BrokerMethods {
@@ -38,7 +38,7 @@ export class Broker implements BrokerMethods {
     /**
      * subscribe
      */
-    public sub(event: BrokerEventsTypes, response: () => Promise<any>): void {
+    public sub(event: BrokerEventsTypes, response: (data: any) => Promise<any | void | null>): void {
         this.events[event] = response;
     }
 }

@@ -13,6 +13,7 @@
     "docker:push": "docker push gcr.io/xxcloud/aurum:latest",
     "export": "next export && tsc --project tsconfig.server.json",
     "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit",
+    "broker": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/broker/*test.ts --exit",
     "eslint": "eslint . --fix --ext=ts,tsx"
   },
   "lint-staged": {

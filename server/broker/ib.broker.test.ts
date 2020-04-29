@@ -1,10 +1,15 @@
 import 'mocha';
-import { expect } from 'chai';
+import { InteractiveBrokers } from './IB.broker';
 
-describe('Given a rethinkdb', () => {
+const ibBroker = new InteractiveBrokers();
 
-    it(`Create a table in rethinkdb`, async () => {
-        expect(null).to.be.not.null;
+describe('Interactive brokers', () => {
+
+    it(`Fake trade `, (done) => {
+        ibBroker.sub("onTrade", async (data: any) => {
+            console.log('data is', data);
+            done();
+        });
     })
 
 })

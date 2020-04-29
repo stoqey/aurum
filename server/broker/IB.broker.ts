@@ -3,10 +3,16 @@ import { Broker, BrokerMethods } from "./broker.interface";
 
 export class InteractiveBrokers extends Broker implements BrokerMethods {
 
-    events = {} as any;
+    // events = {} as any;
 
     constructor() {
         super();
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
+        const self = this;
+        setInterval(() => {
+            const onTrade = self.events["onTrade"];
+            onTrade({ done: new Date });
+        }, 1000)
     }
 
     public async getAllPositions(): Promise<any> {
