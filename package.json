@@ -13,6 +13,7 @@
     "docker:push": "docker push gcr.io/xxcloud/aurum:latest",
     "export": "next export && tsc --project tsconfig.server.json",
     "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit",
+    "broker": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/broker/*test.ts --exit",
     "eslint": "eslint . --fix --ext=ts,tsx"
   },
   "lint-staged": {
@@ -31,6 +32,7 @@
     "@rebass/preset": "^4.0.5",
     "@sentry/browser": "^5.15.4",
     "@sentry/node": "^5.15.4",
+    "@stoqey/aurum-broker-ibkr": "^1.1.0",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-link-http": "^1.5.17",
@@ -38,6 +40,7 @@
     "apollo-server-express": "^2.11.0",
     "axios": "^0.19.2",
     "chalk": "^3.0.0",
+    "debug": "^4.1.1",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
     "events": "^3.1.0",
@@ -61,6 +64,7 @@
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.10.0",
     "@types/chai": "^4.2.11",
+    "@types/debug": "^4.1.5",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.0",
     "@types/lodash": "^4.14.149",

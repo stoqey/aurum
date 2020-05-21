@@ -1,9 +1,10 @@
 import EventEmitter from 'events';
 
 export enum APPEVENTS {
-
-    BUY = 'BUY'
-
+    BUY = 'BUY',
+    PORTFOLIOS = 'portfolios',
+    ONRDERS = 'orders',
+    SCREENER = 'screener'
 }
 
 export class AppEvents extends EventEmitter.EventEmitter {
