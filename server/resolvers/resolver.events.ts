@@ -1,12 +1,13 @@
 import { PubSub } from "apollo-server-express";
 import { IbkrBroker } from '@stoqey/aurum-broker-ibkr';
 import { APPEVENTS } from "../../shared/AppEvent";
+import { log } from "../log";
 
 
 export const resolverEvents = async (pubsub: PubSub, ibkrBroker: IbkrBroker) => {
 
     ibkrBroker.when("onReady", async (ready: any) => {
-        console.log('broker is ready is ready', ready);
+        log('broker is ready is ready', ready);
     })
 
     ibkrBroker.when("onPortfolios", async (portfolios: any) => {
@@ -16,6 +17,6 @@ export const resolverEvents = async (pubsub: PubSub, ibkrBroker: IbkrBroker) => 
     ibkrBroker.when("onOrders", async (portfolios: any) => {
         pubsub.publish(APPEVENTS.ONRDERS, portfolios);
     });
-    
+
     ibkrBroker.init();
 }

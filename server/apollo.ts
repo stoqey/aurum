@@ -10,6 +10,7 @@ import { PORT, appName } from './config';
 import { QueryResolver, SubscriptionResolver } from './resolvers';
 import IbkrBroker from '@stoqey/aurum-broker-ibkr';
 import { resolverEvents } from './resolvers/resolver.events';
+import { log } from './log';
 
 /**
  * Add apollo server and subscription
@@ -57,7 +58,7 @@ export const apolloServerSetUp = (server: express.Application, handle: any): voi
   // Wrap the Express server
   const ws = createServer(server);
   ws.listen(PORT, () => {
-    console.log(`${appName} is now running on http://localhost:${PORT}`);
+    log(`${appName} is now running on http://localhost:${PORT}`);
     // Set up the WebSocket for handling GraphQL subscriptions
     new SubscriptionServer({
       execute,

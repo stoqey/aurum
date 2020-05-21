@@ -1,13 +1,13 @@
 import debug from 'debug';
 
-const libraryPrefix = 'aurum';
+const appPrefix = 'aurum';
 
 /**
  * Use to log in general case
  */
-export const log = debug(`${libraryPrefix}:info`);
+export const log = debug(`${appPrefix}:info`);
 
 /**
  * Use for verbose log
  */
-export const verbose = debug(`${libraryPrefix}:verbose`);
+export const verbose = debug(`${appPrefix}:verbose`);
