@@ -22,3 +22,10 @@ export const appName = env.APP_NAME || 'AURUM:SERVER';
  */
 export const algoServerHost = `http://${env.ALGO_SERVER_SERVICE_HOST || 'localhost'}`;
 export const algoServerPort = env.ALGO_SERVER_SERVICE_PORT || 3001;
+
+/**
+ * Interactive brokers
+ */
+
+export const IB_PORT: number = +(isDev ? (env.IB_PORT || 7497) : 4003);
+export const IB_HOST: string = isDev ? (env.IB_HOST || '127.0.0.1') : env.IBKR_SERVICE_HOST || "";

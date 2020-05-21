@@ -1271,6 +1271,49 @@
   dependencies:
     "@sentry/cli" "^1.52.3"
 
+"@stoqey/aurum-broker-ibkr@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stoqey/aurum-broker-ibkr/-/aurum-broker-ibkr-1.1.0.tgz#87cab69286dc5b78b0d8dd990ab885eeb532b98c"
+  integrity sha512-0Ef36ssfNE5eUr/U+6IH6fZ580pldOMgeElyEEjMU0jgWy1pcvp6whcAUcXJH8HfCWCecC0gWxemnTP3ZALS9g==
+  dependencies:
+    "@stoqey/aurum-broker-spec" "^0.0.7"
+    "@stoqey/ibkr" "^1.1.8"
+    dotenv "^8.2.0"
+
+"@stoqey/aurum-broker-spec@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@stoqey/aurum-broker-spec/-/aurum-broker-spec-0.0.7.tgz#b5fe4303731528884ff173af5edc6d8350a5170e"
+  integrity sha512-d0ebVsklEXGGqFIEhl7HoqBl/JZ3CtCDIhJ+KrNpTgklX1Io9jVPmG9Z2pNaAb/BYexShSR2vc37BlyUGPbh5g==
+
+"@stoqey/ib@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@stoqey/ib/-/ib-0.0.2.tgz#3b1b904b68a0e875dd462ed755a6d2e3db5fed1a"
+  integrity sha512-s6zhAoRhShzfkWMA3JY4ieSaoCyBaTXovTKiEJx2VTt0AiXnLagmOq++RUuYrFyTq4CkdcduSpb/k4xitSAhWg==
+  dependencies:
+    chalk "^4.0.0"
+    command-buffer "^0.1.0"
+    dotenv "^8.2.0"
+    function-rate-limit "^1.1.0"
+    lodash "^4.17.15"
+    moment "^2.24.0"
+
+"@stoqey/ibkr@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@stoqey/ibkr/-/ibkr-1.1.8.tgz#a04552ca8d129b18e6034925b37b795754ee9449"
+  integrity sha512-fIBkd1/nikzEDM0X4qXzLZkpktop6x0Lub/UmVCKW5IIW4HA7CTnZRTzx721zaXUz3Ujm7ku7IYr1WbNOKgYLg==
+  dependencies:
+    "@stoqey/ib" "^0.0.2"
+    "@stoqey/timeout-manager" "^0.0.2"
+    debug "^4.1.1"
+    dotenv "^8.2.0"
+    lodash "^4.17.15"
+    moment "^2.24.0"
+
+"@stoqey/timeout-manager@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@stoqey/timeout-manager/-/timeout-manager-0.0.2.tgz#af39dc509a7cdb6d6edf4be920adb0c2d760a7a1"
+  integrity sha512-/uRZ9osIf+yNq2nq/OcpH6A/h9Lva8HZ5KcDPiXhjAkwX+uQcRHq3GBQG/BHRPekdjvWzfpPnOVEdAJ+XiYALQ==
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"
@@ -3284,6 +3327,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+command-buffer@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/command-buffer/-/command-buffer-0.1.0.tgz#ced3f40f77289314db91cb77ef3b00c332e8e268"
+  integrity sha1-ztP0D3cokxTbkct37zsAwzLo4mg=
+
 commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
@@ -4862,6 +4910,11 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+
+function-rate-limit@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/function-rate-limit/-/function-rate-limit-1.1.0.tgz#eccdf1af918fc959eb6509058603e462e37fd683"
+  integrity sha1-7M3xr5GPyVnrZQkFhgPkYuN/1oM=
 
 function.prototype.name@^1.1.1:
   version "1.1.2"

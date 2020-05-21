@@ -8,28 +8,34 @@ import { GraphQLPath } from '../shared/config';
 import typeDefs from '../shared/graphql/typedef'
 import { PORT, appName } from './config';
 import { QueryResolver, SubscriptionResolver } from './resolvers';
-
+import IbkrBroker from '@stoqey/aurum-broker-ibkr';
+import { resolverEvents } from './resolvers/resolver.events';
 
 /**
  * Add apollo server and subscription
  * @param server express.Application
  */
-export const apolloServerSetUp = (server: express.Application, handle: any) => {
+export const apolloServerSetUp = (server: express.Application, handle: any): void => {
+  const gqlPath = GraphQLPath;
   const pubsub = new PubSub();
+  const broker = new IbkrBroker();
 
+  // -1. Set context
   const context = () => {
     return {
-      pubsub
+      pubsub,
+      broker
     }
   };
-
-  const gqlPath = GraphQLPath;
 
   // 0. Resolvers definition
   const resolvers = {
     Query: QueryResolver,
     Subscription: SubscriptionResolver(pubsub),
   };
+
+  // 0.1. Start broker
+  resolverEvents(pubsub, broker);
 
   // 1. Schema definition
   const schema = makeExecutableSchema({
@@ -47,7 +53,7 @@ export const apolloServerSetUp = (server: express.Application, handle: any) => {
     return handle(req, res);
   });
 
-  // 3. Add web sockets
+  // 4. Add web sockets
   // Wrap the Express server
   const ws = createServer(server);
   ws.listen(PORT, () => {
