@@ -1,7 +1,7 @@
 import { PubSub } from "apollo-server-express";
-
-import { APPEVENTS } from "../../shared/AppEvent";
 import IbkrBroker from "@stoqey/aurum-broker-ibkr";
+import { APPEVENTS } from "../../shared/AppEvent";
+
 
 export const SubscriptionResolver = (pubsub: PubSub, broker: IbkrBroker) => ({
     demo: {

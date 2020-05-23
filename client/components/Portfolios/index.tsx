@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useApolloClient } from '@apollo/react-hooks';
-import { PortfolioSubscription } from '../../../shared/graphql/portfolio';
+import { PortfolioSubscription, Portfolio } from '../../../shared/graphql/portfolio';
+import isEmpty from 'lodash/isEmpty';
 
 export function Portfolios() {
     const client = useApolloClient();
+
+    const [localPortfolios, setLocalPortfolios] = useState<Portfolio[]>([])
 
     useEffect(() => {
         const observer = client.subscribe<any, any>({
@@ -14,63 +17,29 @@ export function Portfolios() {
         })
 
         const subscription = observer.subscribe(({ data }) => {
-
             const portfolios: any[] = data && data.portfolios;
-            console.log('on portfolios are', portfolios);
-
+            setLocalPortfolios(portfolios);
         })
 
         return () => subscription.unsubscribe()
-    }, [])
+    }, []);
 
     return (
         <div className="left-sm">
-            <div className="single-left-sm">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm active">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm active">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm active">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm active">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm active">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
-            <div className="single-left-sm">
-                <h4>AAPL</h4>
-                <h5>1200 <span>20%</span></h5>
-                <h5>1300 <span>30%</span></h5>
-            </div>
+            {!isEmpty(localPortfolios) && (
+                localPortfolios.map((portfolio) => {
+                    const { symbol, averageCost, position } = portfolio;
+                    return (
+                        <div key={portfolio.symbol}>
+                            <div className="single-left-sm">
+                                <h4>{symbol}</h4>
+                                <h5>Market value <span>{averageCost * position}</span></h5>
+                                <h5>1300 <span>30%</span></h5>
+                            </div>
+                        </div>
+                    )
+                })
+            )}
         </div>
-
     )
 }
