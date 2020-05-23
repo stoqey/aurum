@@ -33,7 +33,7 @@ export function Portfolios() {
                         <div key={portfolio.symbol}>
                             <div className="single-left-sm">
                                 <h4>{symbol}</h4>
-                                <h5>Market value <span>{averageCost * position}</span></h5>
+                                <h5>Market value <span>{Math.round(averageCost * position)}</span></h5>
                                 <h5>1300 <span>30%</span></h5>
                             </div>
                         </div>
