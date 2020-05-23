@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import PortfolioTypeDef from './portfolio.typedef';
+import { PortfolioTypeDef } from './portfolio';
 
 
 /**

@@ -1,12 +1,12 @@
 import gql from 'graphql-tag';
 
 export interface Portfolio {
-    position: number;
-    symbol: string;
-    averageCost: number;
+  position: number;
+  symbol: string;
+  averageCost: number;
 };
 
-const PortfolioTypeDef = gql`
+export const PortfolioTypeDef = gql`
     type Portfolio {
       position: Int
       symbol: String
