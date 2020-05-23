@@ -8,5 +8,12 @@ export const SubscriptionResolver = (pubsub: PubSub) => ({
         subscribe: () => {
             return pubsub.asyncIterator(`${APPEVENTS.BUY}`)
         },
+    },
+
+    portfolios: {
+        resolve: (payload: any) => payload,
+        subscribe: () => {
+            return pubsub.asyncIterator(`${APPEVENTS.PORTFOLIOS}`)
+        },
     }
 })
