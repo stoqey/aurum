@@ -1,4 +1,6 @@
 import gql from 'graphql-tag';
+import PortfolioTypeDef from './portfolio.typedef';
+
 
 /**
  * Root TypeDef
@@ -10,10 +12,11 @@ const typeDefs = gql`
   
   type Subscription {
       demo(transId: String, time: String): String
+      portfolios: [Portfolio]
   }
 `;
 
 /**
  * Combined type defs
  */
-export default [typeDefs]
+export default [typeDefs, PortfolioTypeDef]
