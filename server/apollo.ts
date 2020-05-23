@@ -32,7 +32,7 @@ export const apolloServerSetUp = (server: express.Application, handle: any): voi
   // 0. Resolvers definition
   const resolvers = {
     Query: QueryResolver,
-    Subscription: SubscriptionResolver(pubsub),
+    Subscription: SubscriptionResolver(pubsub, broker),
   };
 
   // 0.1. Start broker

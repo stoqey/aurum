@@ -10,12 +10,12 @@ export const resolverEvents = async (pubsub: PubSub, ibkrBroker: IbkrBroker) => 
         log('broker is ready is ready', ready);
     })
 
-    ibkrBroker.when("onPortfolios", async (portfolios: any) => {
+    ibkrBroker.when("onPortfolios", async (portfolios: any[]) => {
         pubsub.publish(APPEVENTS.PORTFOLIOS, portfolios);
     });
 
-    ibkrBroker.when("onOrders", async (portfolios: any) => {
-        pubsub.publish(APPEVENTS.ONRDERS, portfolios);
+    ibkrBroker.when("onOrders", async (orders: any[]) => {
+        pubsub.publish(APPEVENTS.ONRDERS, orders);
     });
 
     ibkrBroker.init();
