@@ -3,7 +3,7 @@ import EventEmitter from 'events';
 export enum APPEVENTS {
     BUY = 'BUY',
     PORTFOLIOS = 'portfolios',
-    ONRDERS = 'orders',
+    ORDERS = 'orders',
     SCREENER = 'screener'
 }
 

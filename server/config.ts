@@ -29,3 +29,6 @@ export const algoServerPort = env.ALGO_SERVER_SERVICE_PORT || 3001;
 
 export const IB_PORT: number = +(isDev ? (env.IB_PORT || 7497) : 4003);
 export const IB_HOST: string = isDev ? (env.IB_HOST || '127.0.0.1') : env.IBKR_SERVICE_HOST || "";
+
+
+export const tradeEnv = env.TRADE_ENV || "paper";

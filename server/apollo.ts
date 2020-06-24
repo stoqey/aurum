@@ -6,12 +6,14 @@ import { SubscriptionServer } from 'subscriptions-transport-ws';
 
 import { GraphQLPath } from '../shared/config';
 import typeDefs from '../shared/graphql/typedef'
-import { PORT, appName } from './config';
+import { PORT, appName, tradeEnv } from './config';
 import { QueryResolver, SubscriptionResolver } from './resolvers';
 import IbkrBroker from '@stoqey/aurum-broker-ibkr';
+import { MilleBroker } from '@stoqey/aurum-broker-mille'
 import { resolverEvents } from './resolvers/resolver.events';
 import { log } from './log';
 
+const isPaper = tradeEnv === 'paper';
 /**
  * Add apollo server and subscription
  * @param server express.Application
@@ -19,7 +21,8 @@ import { log } from './log';
 export const apolloServerSetUp = (server: express.Application, handle: any): void => {
   const gqlPath = GraphQLPath;
   const pubsub = new PubSub();
-  const broker = new IbkrBroker();
+
+  const broker: MilleBroker | IbkrBroker = isPaper ? new MilleBroker(new Date, { write: false, resume: true }) : new IbkrBroker();
 
   // -1. Set context
   const context = () => {

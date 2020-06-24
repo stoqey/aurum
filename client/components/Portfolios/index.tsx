@@ -18,6 +18,7 @@ export function Portfolios() {
 
         const subscription = observer.subscribe(({ data }) => {
             const portfolios: any[] = data && data.portfolios;
+            console.log('portfolios', portfolios);
             setLocalPortfolios(portfolios);
         })
 

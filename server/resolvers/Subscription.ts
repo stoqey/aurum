@@ -1,9 +1,10 @@
 import { PubSub } from "apollo-server-express";
 import IbkrBroker from "@stoqey/aurum-broker-ibkr";
+import { MilleBroker } from "@stoqey/aurum-broker-mille";
 import { APPEVENTS } from "../../shared/AppEvent";
 
 
-export const SubscriptionResolver = (pubsub: PubSub, broker: IbkrBroker) => ({
+export const SubscriptionResolver = (pubsub: PubSub, broker: IbkrBroker | MilleBroker) => ({
     demo: {
         resolve: (payload: any) => payload,
         subscribe: () => {
