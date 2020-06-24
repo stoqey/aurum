@@ -8,4 +8,4 @@ export const theme = {
         background: '#fff',
         primary: '#07c',
     },
-}
+};

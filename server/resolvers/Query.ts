@@ -1,4 +1,4 @@
-import isEmpty from "lodash/isEmpty";
+import isEmpty from 'lodash/isEmpty';
 
 // import { APPEVENTS, AppEvents } from "../../shared/AppEvent";
 
@@ -11,5 +11,5 @@ export const QueryResolver = {
             return true;
         }
         return false;
-    }
-}
+    },
+};

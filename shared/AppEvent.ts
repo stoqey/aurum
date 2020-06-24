@@ -4,7 +4,7 @@ export enum APPEVENTS {
     BUY = 'BUY',
     PORTFOLIOS = 'portfolios',
     ORDERS = 'orders',
-    SCREENER = 'screener'
+    SCREENER = 'screener',
 }
 
 export class AppEvents extends EventEmitter.EventEmitter {
@@ -18,6 +18,4 @@ export class AppEvents extends EventEmitter.EventEmitter {
         super();
         // this.setMaxListeners(100); // set a maximum of 50 event listners
     }
-
 }
-
